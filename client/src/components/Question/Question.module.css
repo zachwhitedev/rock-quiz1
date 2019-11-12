@@ -1,0 +1,18 @@
+.container {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.question {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.form {
+    margin: 30px auto 0px auto;
+    border: solid black 1px;
+}
+
+.btn {
+    border: 1px solid gray;
+}
+
