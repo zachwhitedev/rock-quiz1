@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.module.css';
 import Scoreboard from './Scoreboard/index';
 import QuestionCard from './QuestionCard/index';
 

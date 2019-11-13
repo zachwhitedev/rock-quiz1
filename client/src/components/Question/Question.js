@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import StyledRadio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -13,9 +13,9 @@ import {
 } from './actions';
 
 export default function Question(props) {
-  const dispatch = useDispatch()
+  const score = useSelector(state => state.quiz.score);
+  const dispatch = useDispatch();
   const[q, setQ] = useState(0);
-  const[score, setScore] = useState(0);
   const[answer, setAnswer] = useState('');
   const[errorMessage, setError] = useState('');
 
@@ -25,8 +25,7 @@ export default function Question(props) {
       return;
     }
     if(answer == questions[q].correct_answer){
-    console.log('correct!');
-    setScore(score + 1);
+    dispatch(addScore(score));
     setQ(q + 1);
     }else {
         setQ(q + 1);
