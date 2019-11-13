@@ -14,6 +14,7 @@ import {
 
 export default function Question(props) {
   const score = useSelector(state => state.quiz.score);
+  const questionslength = useSelector(state => state.quiz.questionslength);
   const dispatch = useDispatch();
   const[q, setQ] = useState(0);
   const[answer, setAnswer] = useState('');
@@ -21,14 +22,17 @@ export default function Question(props) {
 
   const submit = () => {
     if(answer == ''){
-      setError('Choose a fuckin answer.')
+      setError('Choose an answer.')
+      setAnswer('');
       return;
-    }
+    };
     if(answer == questions[q].correct_answer){
     dispatch(addScore(score));
     setQ(q + 1);
+    setAnswer('');
     }else {
         setQ(q + 1);
+        setAnswer('');
     }
   }
 
@@ -54,24 +58,28 @@ export default function Question(props) {
             name='a'
             control={<StyledRadio />}
             label={questions[q].answer_a}
+            checked={answer == 'a'}
             />
           <FormControlLabel
             value="b"
             name='b'
             control={<StyledRadio />}
             label={questions[q].answer_b}
+            checked={answer == 'b'}
             />
           <FormControlLabel
             value="c"
             name='c'
             control={<StyledRadio />}
             label={questions[q].answer_c}
+            checked={answer == 'c'}
           />
           <FormControlLabel
             value="d"
             name='d'
             control={<StyledRadio />}
             label={questions[q].answer_d}
+            checked={answer == 'd'}
           />
         </RadioGroup>
       </FormControl>
