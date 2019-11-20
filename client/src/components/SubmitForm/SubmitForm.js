@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import styles from './SubmitForm.module.css';
-import { setIsSubmitting } from '../Question/actions';
+import { setIsSubmitting, addScore, setIsFinished } from '../Question/actions';
 
 function SubmitForm(props) {
   const [username, setUsername] = useState('');
 //   const questionslength = useSelector(state => state.quiz.questionslength);
   const dispatch = useDispatch();
+  
 
   const handleChange = e => {
     setUsername(e.target.value);
@@ -21,12 +22,16 @@ function SubmitForm(props) {
   const sendScoreToDB = () => {
     const newScore = {
       name: username,
-      score: props.score
+      score: Math.round(((props.score / props.questionslength) * 100))
     };
     axios
       .post('/api/rockscores', newScore)
       .then(res => res.data)
       .catch(err => console.loge(err));
+      
+      dispatch(setIsSubmitting(false));
+      dispatch(addScore(-1));
+      dispatch(setIsFinished(false));
   };
 
   return (

@@ -23,6 +23,7 @@ export default function Question(props) {
   const [answer, setAnswer] = useState('');
   const [errorMessage, setError] = useState('');
 
+
   const submit = () => {
     if (q == questionslength - 1) {
       if (answer == '') {
@@ -30,14 +31,15 @@ export default function Question(props) {
         return;
       }
       if (answer == questions[q].correct_answer) {
+        setQ(0);
         dispatch(addScore(score));
         dispatch(setIsFinished(true));
         setAnswer('');
         return;
       } else {
+        setQ(0);
         dispatch(setIsFinished(true));
         setAnswer('');
-        setQ(0);
       }
     } else {
       if (answer == '') {
@@ -49,6 +51,7 @@ export default function Question(props) {
         setAnswer('');
       } else {
         setQ(q + 1);
+        setAnswer('');
       }
     }
   };

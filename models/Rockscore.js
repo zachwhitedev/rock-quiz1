@@ -3,14 +3,13 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const RockscoreSchema = new Schema({
-    name: {
-        type: String
-    },
-    email: {
-        type: String
+    username: {
+        type: String,
+        require: true
     },
     score: {
-        type: Number
+        type: Number,
+        require: true
     },
     date: {
         type: Date,
