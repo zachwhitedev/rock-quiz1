@@ -20,3 +20,10 @@ export function getQuestionslength(length) {
         payload: length
     };   
 }
+
+export function currentQuestion(q) {
+    return {
+        type:'GET_CURRENT_QUESTION',
+        payload: q + 1
+    };   
+}

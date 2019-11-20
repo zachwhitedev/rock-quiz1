@@ -5,7 +5,7 @@ export default function Scoreboard(props) {
 
     return (
       <div className={styles.container}>
-          <h1>{props.score} / {props.questionslength}</h1>
+          <h1>Score: {props.score} / {props.questionslength}</h1>
     </div>
   );
 }

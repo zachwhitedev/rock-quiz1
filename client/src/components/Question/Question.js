@@ -6,7 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import styles from './Question.module.css';
 import questions from '../../questions';
-import { addScore, resetScore, getQuestionslength } from './actions';
+import { addScore, resetScore, getQuestionslength, currentQuestion } from './actions';
 
 export default function Question(props) {
   const score = useSelector(state => state.quiz.score);

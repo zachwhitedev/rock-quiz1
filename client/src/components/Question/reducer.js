@@ -28,6 +28,13 @@ export default function questionReducer(state = defaultState, action) {
                 questionslength: payload
             }
         }
+        
+        case 'GET_QUESTIONS_LENGTH': {
+            return {
+                ...state,
+                questionslength: payload
+            }
+        }
 
         default: {
             return state;
