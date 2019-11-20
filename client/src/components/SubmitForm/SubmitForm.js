@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import styles from './SubmitForm.module.css';
 
 function SubmitForm (props){
 
     const[username, setUsername] = useState('');
 
-    handleChange = e => {
+    const handleChange = e => {
       setUsername(e.target.value);
     };
     
-    sendScoreToDB = () => {
+    const sendScoreToDB = () => {
       const newScore = {
         name: username,
         score: props.score
@@ -23,7 +24,7 @@ function SubmitForm (props){
     
     
       return (
-        <form>
+        <form className={styles.submitform}>
           <div>
             <input
               type='text'

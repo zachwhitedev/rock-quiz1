@@ -2,12 +2,14 @@ import React from 'react';
 import './App.module.css';
 import Scoreboard from './Scoreboard/index';
 import QuestionCard from './QuestionCard/index';
+import SubmitForm from '../components/SubmitForm/SubmitForm';
 import { getThemeProps } from '@material-ui/styles';
 import { connect } from 'react-redux';
 
 function App(props) {
   return (
     <div className="App">
+      <SubmitForm />
       {!props.isFinished && <Scoreboard />}
       <QuestionCard />
     </div>
