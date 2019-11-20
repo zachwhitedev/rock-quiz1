@@ -35,11 +35,13 @@ export default function Question(props) {
         dispatch(addScore(score));
         dispatch(setIsFinished(true));
         setAnswer('');
+        setError('');
         return;
       } else {
         setQ(0);
         dispatch(setIsFinished(true));
         setAnswer('');
+        setError('');
       }
     } else {
       if (answer == '') {
@@ -49,9 +51,11 @@ export default function Question(props) {
         dispatch(addScore(score));
         setQ(q + 1);
         setAnswer('');
+        setError('');
       } else {
         setQ(q + 1);
         setAnswer('');
+        setError('');
       }
     }
   };
@@ -77,9 +81,15 @@ export default function Question(props) {
   if (!props.isFinished) {
     return (
       <div className={styles.container}>
+        <div className={styles.error}>
+        <p>
         {errorMessage}
+          </p>
+        </div>
+        <div className={styles.questiondiv}>
         <span className={styles.question}>{questions[q].question}</span>
-        <FormControl component='fieldset'>
+        </div>
+        <FormControl component='fieldset' classNAme='form2'>
           <RadioGroup
             className={styles.form}
             name='customized-radios'

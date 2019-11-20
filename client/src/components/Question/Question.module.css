@@ -1,18 +1,36 @@
 .container {
-    padding: 5px;
-    border: 1px solid black;
+  padding: 5px;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
 }
 
-.question {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.questiondiv {
+  display: block;
+  margin: 15px auto 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 15em;
 }
 
 .form {
-    margin: 30px auto 0px auto;
-    border: solid black 1px;
+  margin: 30px 0px 10px 80px;
 }
 
 .btn {
-    border: 1px solid gray;
+  border: 1px solid rgb(27, 27, 27);
+  padding: 10px 20px;
+  background: rgb(238, 238, 238);
+  margin-bottom: 15px;
 }
 
+button {
+  border: 1px solid rgb(27, 27, 27);
+  padding: 10px 20px;
+  background: rgb(238, 238, 238);
+  margin-bottom: 15px;
+}
+
+.error > p {
+  text-align: center;
+  color: red;
+  font-weight: 700;
+}
