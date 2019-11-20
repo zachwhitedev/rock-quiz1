@@ -21,9 +21,16 @@ export function getQuestionslength(length) {
     };   
 }
 
-export function currentQuestion(q) {
+export function getCurrentQuestion(q) {
     return {
         type:'GET_CURRENT_QUESTION',
-        payload: q + 1
+        payload: q
+    };   
+
+}
+export function setIsFinished(val) {
+    return {
+        type:'SET_IS_FINISHED',
+        payload: val
     };   
 }

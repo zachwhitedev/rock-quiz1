@@ -1,6 +1,8 @@
 const defaultState = {
     score: 0,
-    questionslength: 0
+    questionslength: 0,
+    currentQuestion: 1,
+    isFinished: false
 };
 
 export default function questionReducer(state = defaultState, action) {
@@ -28,11 +30,18 @@ export default function questionReducer(state = defaultState, action) {
                 questionslength: payload
             }
         }
-        
-        case 'GET_QUESTIONS_LENGTH': {
+
+        case 'GET_CURRENT_QUESTION': {
             return {
                 ...state,
-                questionslength: payload
+                currentQuestion: payload
+            }
+        }
+
+        case 'SET_IS_FINISHED': {
+            return {
+                ...state,
+                isFinished: payload
             }
         }
 

@@ -6,7 +6,13 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import styles from './Question.module.css';
 import questions from '../../questions';
-import { addScore, resetScore, getQuestionslength, currentQuestion } from './actions';
+import {
+  addScore,
+  resetScore,
+  getQuestionslength,
+  getCurrentQuestion,
+  setIsFinished
+} from './actions';
 
 export default function Question(props) {
   const score = useSelector(state => state.quiz.score);
@@ -15,33 +21,30 @@ export default function Question(props) {
   const [q, setQ] = useState(0);
   const [answer, setAnswer] = useState('');
   const [errorMessage, setError] = useState('');
-  const [isFinished, setIsFinished] = useState(false);
 
   const submit = () => {
     if (q == questionslength - 1) {
-      if (answer == ''){
+      if (answer == '') {
         setError('Choose an answer.');
-      };
+        return;
+      }
       if (answer == questions[q].correct_answer) {
         dispatch(addScore(score));
-        setIsFinished(true);
+        dispatch(setIsFinished(true));
         setAnswer('');
+        return;
       } else {
-        setIsFinished(true);
+        dispatch(setIsFinished(true));
         setAnswer('');
+        setQ(0);
       }
-      return;
     } else {
       if (answer == '') {
         setError('Choose an answer.');
-      }
-      if (answer == questions[q].correct_answer) {
+        return;
+      } else if (answer == questions[q].correct_answer) {
         dispatch(addScore(score));
-        if (q == questions.length - 1) {
-          setIsFinished(true);
-        } else {
-          setQ(q + 1);
-        }
+        setQ(q + 1);
         setAnswer('');
       } else {
         setQ(q + 1);
@@ -51,9 +54,10 @@ export default function Question(props) {
 
   useEffect(() => {
     dispatch(getQuestionslength(questions.length));
+    dispatch(getCurrentQuestion(q + 1));
   });
 
-  if (!isFinished) {
+  if (!props.isFinished) {
     return (
       <div className={styles.container}>
         {errorMessage}
@@ -99,11 +103,15 @@ export default function Question(props) {
         </button>
       </div>
     );
-  } else if (isFinished) {
+  } else if (props.isFinished) {
     return (
       <div>
         <h1>You're finished!</h1>
-        <h1>Score: {score}</h1>
+        <h2>
+        Score: {Math.round(((props.score / questionslength) * 100))}%
+        <button>Play Again</button>
+        <button>Submit Score</button>
+        </h2>
       </div>
     );
   }
