@@ -5,6 +5,7 @@ import QuestionCard from './QuestionCard/index';
 import SubmitForm from '../components/SubmitForm/SubmitForm';
 import { getThemeProps } from '@material-ui/styles';
 import { connect } from 'react-redux';
+import Leaderboard from './Leaderboard/Leaderboard';
 
 function App(props) {
   return (
@@ -12,6 +13,7 @@ function App(props) {
       {props.isSubmitting && <SubmitForm />}
       {!props.isFinished && <Scoreboard />}
       <QuestionCard />
+      <Leaderboard />
     </div>
   );
 }

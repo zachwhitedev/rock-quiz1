@@ -6,6 +6,7 @@ const Rockscore = require('../../models/Rockscore');
 
 router.get('/', (req, res) => {
   Rockscore.find()
+    .sort({ score: -1 })
     .then(rockscores => res.json(rockscores));
 });
 
