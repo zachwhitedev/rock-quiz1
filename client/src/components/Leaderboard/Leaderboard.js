@@ -32,7 +32,9 @@ function Leaderboard(props) {
       </div>
     )} else {
         return (
-            <h1>Loading...</h1>
+            <div className={styles.container}>
+                <h1>Loading...</h1>
+            </div>
         )
     }
 }
