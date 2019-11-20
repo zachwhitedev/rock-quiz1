@@ -6,7 +6,8 @@ function mapStoreToProps(store) {
         score: store.quiz.score,
         questionslength: store.quiz.questionslength,
         currentQuestion: store.quiz.currentQuestion,
-        isFinished: store.quiz.isFinished
+        isFinished: store.quiz.isFinished,
+        isSubmitting: store.quiz.isSubmitting
     };
 }
 export default connect(mapStoreToProps)(Question);

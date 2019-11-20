@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.module.css';
+import styles from './App.module.css';
 import Scoreboard from './Scoreboard/index';
 import QuestionCard from './QuestionCard/index';
 import SubmitForm from '../components/SubmitForm/SubmitForm';
@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 function App(props) {
   return (
     <div className="App">
-      <SubmitForm />
+      {props.isSubmitting && <SubmitForm />}
       {!props.isFinished && <Scoreboard />}
       <QuestionCard />
     </div>
@@ -22,7 +22,8 @@ function mapStoreToProps(store) {
         score: store.quiz.score,
         questionslength: store.quiz.questionslength,
         currentQuestion: store.quiz.currentQuestion,
-        isFinished: store.quiz.isFinished
+        isFinished: store.quiz.isFinished,
+        isSubmitting: store.quiz.isSubmitting
     };
 }
 export default connect(mapStoreToProps)(App);

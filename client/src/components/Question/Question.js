@@ -11,7 +11,8 @@ import {
   resetScore,
   getQuestionslength,
   getCurrentQuestion,
-  setIsFinished
+  setIsFinished,
+  setIsSubmitting
 } from './actions';
 
 export default function Question(props) {
@@ -51,6 +52,19 @@ export default function Question(props) {
       }
     }
   };
+
+  const startSubmit = () => {
+    dispatch(setIsSubmitting(true));
+  }
+
+  const playAgain = () => {
+    dispatch(setIsSubmitting(false));
+    dispatch(addScore(-1));
+    dispatch(setIsFinished(false));
+    setQ(0);
+    setAnswer('');
+    setError('');
+  }
 
   useEffect(() => {
     dispatch(getQuestionslength(questions.length));
@@ -109,8 +123,8 @@ export default function Question(props) {
         <h1>You're finished!</h1>
         <h2>
         Score: {Math.round(((props.score / questionslength) * 100))}%
-        <button>Play Again</button>
-        <button>Submit Score</button>
+        <button onClick={playAgain}>Play Again</button>
+        <button onClick={startSubmit}>Submit Score</button>
         </h2>
       </div>
     );

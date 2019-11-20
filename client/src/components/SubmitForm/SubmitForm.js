@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import styles from './SubmitForm.module.css';
+import { setIsSubmitting } from '../Question/actions';
 
 function SubmitForm(props) {
   const [username, setUsername] = useState('');
+//   const questionslength = useSelector(state => state.quiz.questionslength);
+  const dispatch = useDispatch();
 
   const handleChange = e => {
     setUsername(e.target.value);
   };
+
+  const cancelSubmit = () => {
+      dispatch(setIsSubmitting(false));
+  }
 
   const sendScoreToDB = () => {
     const newScore = {
@@ -32,10 +40,13 @@ function SubmitForm(props) {
           value={username}
           required
         />
-        <button onClick={sendScoreToDB}>Submit!</button>
+        <h4>Score: {Math.round(((props.score / props.questionslength) * 100))}%</h4>
+        <button onClick={sendScoreToDB}>Submit</button>
+        <button onClick={cancelSubmit}>Cancel</button>
     </div>
   );
 }
+
 
 function mapStoreToProps(store) {
   return {

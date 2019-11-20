@@ -34,3 +34,10 @@ export function setIsFinished(val) {
         payload: val
     };   
 }
+
+export function setIsSubmitting(val) {
+    return {
+        type: 'SET_IS_SUBMITTING',
+        payload: val
+    }
+}
