@@ -136,8 +136,8 @@ export default function Question(props) {
         <h1>You're finished!</h1>
         <h2>
         Score: {Math.round(((props.score / questionslength) * 100))}%
-        <button onClick={playAgain}>Play Again</button>
-        <button onClick={startSubmit}>Submit Score</button>
+        <button onClick={startSubmit} id={styles.submitscore}>Submit Score</button>
+        <button onClick={playAgain} id={styles.playagain}>Play Again</button>
         </h2>
       </div>
     );

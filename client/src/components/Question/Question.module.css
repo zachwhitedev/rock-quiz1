@@ -2,6 +2,7 @@
   padding: 5px;
   border: 1px solid black;
   background-color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
 }
 
 .finished {
@@ -10,6 +11,7 @@
   background-color: rgb(255, 255, 255);
   text-align: center;
   margin-top: 40px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .questiondiv {
@@ -17,17 +19,20 @@
   margin: 15px auto 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   width: 15em;
+  font-family: 'Roboto', sans-serif;
 }
 
 .form {
   margin: 30px 0px 10px 80px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn {
   border: 1px solid rgb(27, 27, 27);
   padding: 10px 20px;
-  background: rgb(238, 238, 238);
+  background: rgb(227, 255, 220);
   margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
 }
 
 button {
@@ -35,6 +40,7 @@ button {
   padding: 10px 20px;
   background: rgb(238, 238, 238);
   margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .error > p {
@@ -43,3 +49,19 @@ button {
   font-weight: 700;
   font-family: 'Roboto', sans-serif;
 }
+
+#playagain {
+  margin-top: 8px;
+  display: block;
+  background: rgb(255, 246, 196);
+  font-family: 'Roboto', sans-serif;
+}
+
+#submitscore {
+  margin-top: 20px;
+  background: rgb(132, 255, 142);
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+

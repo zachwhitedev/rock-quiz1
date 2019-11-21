@@ -43,6 +43,7 @@ function SubmitForm(props) {
           placeholder='username'
           onChange={handleChange}
           value={username}
+          maxlength="12"
           required
         />
         <h4>Score: {Math.round(((props.score / props.questionslength) * 100))}%</h4>

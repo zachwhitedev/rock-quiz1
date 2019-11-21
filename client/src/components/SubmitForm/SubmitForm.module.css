@@ -1,6 +1,7 @@
 .submitform {
   border: black solid 2px;
-  width: 220px;
+  width: 280px;
+  height: 235px;
   background: rgb(255, 156, 156);
   position: absolute;
   margin-left: auto;
@@ -14,10 +15,15 @@
 }
 
 input {
+    width: 8em;
+    height: 20px;
+    text-align: center;
     display: block;
-    margin: 20px auto 0 auto;
+    margin: 30px auto 0 auto;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
+    font-size: 12pt;
+    padding: 0;
 }
 
 button {
@@ -29,12 +35,18 @@ button {
 }
 
 #submit {
+  margin-left: 12px;
+  margin-bottom: 20px;
   display: inline;
+  width: 90px;
   background: rgb(128, 255, 86);
   font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
 
 #cancel {
+  margin-top: 40px;
+  margin-left: 20px;
   background: rgb(255, 229, 124);
   display: inline;
   font-family: 'Roboto', sans-serif;
