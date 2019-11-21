@@ -20,6 +20,6 @@ If you're interested in cloning it, run these commands to ge it up and running o
 4. cd ..
 5. npm run dev
 
-You will probably get an error about missing a MongoDB URI string but that shouldn't effect your ability to run the project and play around with my (sketchy) code.
+You will probably get an error about missing a MongoDB URI string but that shouldn't effect your ability to run the project and play around with the code.
 
 Enjoy ☘️
