@@ -17,14 +17,6 @@
     overflow-y: scroll;
 }
 
-pre::-webkit-scrollbar {
-    height: 10px;
-}
-
-pre::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, .3);
-}
-
 th {
     background: chartreuse;
 }
