@@ -89,7 +89,7 @@ export default function Question(props) {
         <div className={styles.questiondiv}>
         <span className={styles.question}>{questions[q].question}</span>
         </div>
-        <FormControl component='fieldset' classNAme='form2'>
+        <FormControl component='fieldset' className='form2'>
           <RadioGroup
             className={styles.form}
             name='customized-radios'

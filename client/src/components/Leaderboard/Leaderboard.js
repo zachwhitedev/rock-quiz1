@@ -1,8 +1,9 @@
 import styles from './Leaderboard.module.css';
 import React, { useEffect, useState, useCallback } from 'react';
 import { connect } from 'react-redux';
+import Spin from '../Spinner/Spin';
 import axios from 'axios';
-import { style } from '@material-ui/system';
+
 
 function Leaderboard(props) {
   const [scores, getScores] = useState([]);
@@ -20,7 +21,6 @@ function Leaderboard(props) {
   );
 
   if (scores[0]) {
-    console.log(scores);
     return (
       <div className={styles.container}>
         <p id={styles.leaderboard}>Leaderboard</p>
@@ -35,43 +35,43 @@ function Leaderboard(props) {
             </thead>
             <tbody>
               <tr>
-                <td>{scores[0].username}</td>
+                <td>1. {scores[0].username}</td>
                 <td>{scores[0].score}%</td>
               </tr>
               <tr>
-                <td>{scores[1].username}</td>
+                <td>2. {scores[1].username}</td>
                 <td>{scores[1].score}%</td>
               </tr>
               <tr>
-                <td>{scores[2].username}</td>
+                <td>3. {scores[2].username}</td>
                 <td>{scores[2].score}%</td>
               </tr>
               <tr>
-                <td>{scores[3].username}</td>
+                <td>4. {scores[3].username}</td>
                 <td>{scores[3].score}%</td>
               </tr>
               <tr>
-                <td>{scores[4].username}</td>
+                <td>5. {scores[4].username}</td>
                 <td>{scores[4].score}%</td>
               </tr>
               <tr>
-                <td>{scores[5].username}</td>
+                <td>6. {scores[5].username}</td>
                 <td>{scores[5].score}%</td>
               </tr>
               <tr>
-                <td>{scores[6].username}</td>
+                <td>7. {scores[6].username}</td>
                 <td>{scores[6].score}%</td>
               </tr>
               <tr>
-                <td>{scores[7].username}</td>
+                <td>8. {scores[7].username}</td>
                 <td>{scores[7].score}%</td>
               </tr>
               <tr>
-                <td>{scores[8].username}</td>
+                <td>9. {scores[8].username}</td>
                 <td>{scores[8].score}%</td>
               </tr>
               <tr>
-                <td>{scores[9].username}</td>
+                <td>10. {scores[9].username}</td>
                 <td>{scores[9].score}%</td>
               </tr>
             </tbody>
@@ -82,8 +82,11 @@ function Leaderboard(props) {
     );
   } else {
     return (
-      <div className={styles.container}>
-        <h1>Loading...</h1>
+      <div className={styles.container} id={styles.center}>
+        <p id={styles.leaderboard}>Leaderboard</p>
+        <div className={styles.spinny}>
+        <Spin />
+        </div>
       </div>
     );
   }
