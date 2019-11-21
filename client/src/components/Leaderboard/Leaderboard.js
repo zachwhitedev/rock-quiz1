@@ -25,36 +25,58 @@ function Leaderboard(props) {
       <div className={styles.container}>
         <p id={styles.leaderboard}>Leaderboard</p>
         <div id={styles.scores}>
-          <li>
-            1. {scores[0].username} ||{scores[0].score}%||
-          </li>
-          <li>
-            2. {scores[1].username} ||{scores[1].score}%||
-          </li>
-          <li>
-            3. {scores[2].username} ||{scores[2].score}%||
-          </li>
-          <li>
-            4. {scores[3].username} ||{scores[3].score}%||
-          </li>
-          <li>
-            5. {scores[4].username} ||{scores[4].score}%||
-          </li>
-          <li>
-            6. {scores[5].username} ||{scores[5].score}%||
-          </li>
-          <li>
-            7. {scores[6].username} ||{scores[6].score}%||
-          </li>
-          <li>
-            8. {scores[7].username} ||{scores[7].score}%||
-          </li>
-          <li>
-            9. {scores[8].username} ||{scores[8].score}%||
-          </li>
-          <li>
-            10. {scores[9].username} ||{scores[9].score}%||
-          </li>
+          <div className={styles.tableContainer}>
+          <table>
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{scores[0].username}</td>
+                <td>{scores[0].score}%</td>
+              </tr>
+              <tr>
+                <td>{scores[1].username}</td>
+                <td>{scores[1].score}%</td>
+              </tr>
+              <tr>
+                <td>{scores[2].username}</td>
+                <td>{scores[2].score}%</td>
+              </tr>
+              <tr>
+                <td>{scores[3].username}</td>
+                <td>{scores[3].score}%</td>
+              </tr>
+              <tr>
+                <td>{scores[4].username}</td>
+                <td>{scores[4].score}%</td>
+              </tr>
+              <tr>
+                <td>{scores[5].username}</td>
+                <td>{scores[5].score}%</td>
+              </tr>
+              <tr>
+                <td>{scores[6].username}</td>
+                <td>{scores[6].score}%</td>
+              </tr>
+              <tr>
+                <td>{scores[7].username}</td>
+                <td>{scores[7].score}%</td>
+              </tr>
+              <tr>
+                <td>{scores[8].username}</td>
+                <td>{scores[8].score}%</td>
+              </tr>
+              <tr>
+                <td>{scores[9].username}</td>
+                <td>{scores[9].score}%</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
         </div>
       </div>
     );

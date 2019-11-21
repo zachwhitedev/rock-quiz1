@@ -132,7 +132,7 @@ export default function Question(props) {
     );
   } else if (props.isFinished) {
     return (
-      <div>
+      <div className={styles.finished}>
         <h1>You're finished!</h1>
         <h2>
         Score: {Math.round(((props.score / questionslength) * 100))}%
