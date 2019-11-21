@@ -46,8 +46,8 @@ function SubmitForm(props) {
           required
         />
         <h4>Score: {Math.round(((props.score / props.questionslength) * 100))}%</h4>
-        <button onClick={sendScoreToDB}>Submit</button>
-        <button onClick={cancelSubmit}>Cancel</button>
+        <button id={styles.cancel} onClick={cancelSubmit}>Cancel</button>
+        <button id={styles.submit} onClick={sendScoreToDB}>Submit</button>
     </div>
   );
 }
