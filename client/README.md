@@ -1,5 +1,7 @@
 ## Rock Music Quiz
 
+![alt text](<img src='./scRockquizPort.png'/>)
+
 A short quiz/game about rock music made using:
 
 - React (Hooks)
