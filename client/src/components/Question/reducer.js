@@ -3,7 +3,7 @@ const defaultState = {
     questionslength: 0,
     currentQuestion: 1,
     isFinished: false,
-    isSubmitting: true
+    isSubmitting: false
 };
 
 export default function questionReducer(state = defaultState, action) {
